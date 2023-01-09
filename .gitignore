@@ -1,0 +1,7 @@
+# Entferne LaTeX Kompilate
+# Remove LaTeX compilates
+
+*.log
+*.aux
+*.pdf
+

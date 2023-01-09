@@ -1,65 +1,91 @@
-\documentclass[11pt]{scrartcl}
+\documentclass[11pt]{article}
 
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
 
-\begin{document}
-
 \title{Prüfungsvorbereitung für die IHK-Abschlussprüfung Teil I}
-\author{el-puerro}
+\author{L.M.}
 
-\chapter{Entwicklung Vernetzter Prozesse}
+\begin{document}
+\maketitle
+
 \section{Elektrotechnik}
 \subsection{Grundgrößen der Elektrotechnik}
 
 \paragraph{Die Elektrische Spannung:}
+
 \begin{center}
-	\begin{tabular}{ |c|c| }
-		Formelzeichen & U            \\
+	\begin{tabular}{ ll }
+		Formelzeichen & U            \\ 
 		Einheit       & Volt (V)     \\
-		Beispiel      & $ U = 230V $ \\
+		Beispiel      & $U = 230V$ \\ 
 	\end{tabular}
 \end{center}
 
 \paragraph{Die Elektrische Stromstärke:}
+
 \begin{center}
-	\begin{tabular}{ |c|c| }
-		Formelzeichen & I            \\
+	\begin{tabular}{ ll }
+		Formelzeichen & I            \\ 
 		Einheit       & Ambere (A)   \\
-		Beispiel      & $ I = 2A $   \\
+		Beispiel      & $I = 2A$    \\
 	\end{tabular}
 \end{center}
 
 \paragraph{Der Elektrische Widerstand:}
+
 \begin{center}
-	\begin{tabular}{ |c|c| }
+    \begin{tabular}{ ll }
 		Formelzeichen & R            \\
-		Einheit       & Ohm (\Omega)   \\
-		Beispiel      & $ R = 10\Omega $   \\
+		Einheit       & Ohm ($\Omega$)   \\
+		Beispiel      & $R = 10\Omega$    \\
 	\end{tabular}
 \end{center}
 
 \paragraph{Das Ohmsche Gesetz:}
-\begin{center}
-    \begin{align}
-    	U = R \cdot I
-    	P = U \cdot I
-    \end{align}
-\end{align}
 
-\paragraph{Mathematische Zusammenhänge der Reihenschaltung:}
-Es gilt: 
 \begin{center}
-	\begin{align}
-		U_G = U_1 + U_2 + \dots + U_n
-		I_G = I_1 = I_2 = I_3 = \dots = I_n
-		R_G = R_1 + R_2 + \dots + R_n
-	\end{align}
-\begin{center}
+    \begin{equation}
+        U = R \cdot I 
+    \end{equation}
+    \begin{equation}
+        P = U \cdot I
+    \end{equation}
+\end{center}
 
-Da 
+\subsection{Mathematische Zusammenhänge der Reihenschaltung}
+
+In einer \emph{Reihenschaltung} fließt der Strom durch einen Widerstand nach
+dem anderen. Daraus ergeben sich folgende Zusammenhänge: 
+
+\begin{center}
+    \begin{equation}
+        U_G = U_1 + U_2 + \dots + U_n 
+        I_G = I_1 = I_2 = I_3 = \dots = I_n 
+        R_G = R_1 + R_2 + \dots + R_n 
+    \end{equation}
+\end{center}
+
+Da alle Elektronen, die durch Widerstand No. 1 fließen, auch durch alle
+folgenden Widerstände fließen müssen. An der \emph{Stromstärke} an sich ändert 
+sich nichts. Der Gesamtwiderstand und die Gesamtspannung ist aus selbigem Grund 
+die \emph{Summe aller Teilwiderstände bzw. -Spannungen}.  
+
+\subsection{Mathematische Zusammenhänge der Parallelschaltung}
+
+In einer \emph{Parallelschaltung} werden Widerstände und/oder Kondensatoren 
+parallel in einem Schaltkreis angeordnet. Bei jeder Abzweigung \emph{teilt 
+sich der Strom auf}. Daraus ergeben sich folgende Zusammenhänge:
+
+\begin{center}
+    \begin{equation}
+            U_G = U_1 + U_2 + \dots + U_n 
+            I_G = I_1 = I_2 = I_3 = \dots = I_n 
+            R_G = R_1 + R_2 + \dots + R_n 
+    \end{equation}
+\end{center}
 
 \section{Digitaltechnik}
 \dots
@@ -160,3 +186,5 @@ Da
 \dots
 
 \end{document}
+
+
