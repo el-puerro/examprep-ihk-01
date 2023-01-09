@@ -1,9 +1,10 @@
-\documentclass[11pt]{article}
+\documentclass[a4paper, 12pt]{article}
 
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
+\usepackage[a4paper, left=2.5cm, right=2cm, top=2cm]{geometry}
 
 \title{Prüfungsvorbereitung für die IHK-Abschlussprüfung Teil I}
 \author{L.M.}
@@ -91,11 +92,63 @@ sich der Strom auf}. Daraus ergeben sich folgende Zusammenhänge:
         U_G = U_1 = U_2 = \dots = U_n
     \end{equation}
     \begin{equation}
-        R_G = R_1 + R_2 + \dots + R_n 
+        \frac{1}{R_G} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n} 
     \end{equation}
 \end{center}
 
+In der Parallelschaltung bleibt also die \emph{Spannung konstant}, und die
+Stromstärke lässt sich durch die Aufteilung der Gesamtstromstärke 
+\emph{aufaddieren}. Es gilt zu beachten, dass der Widerstand nicht \emph{größer}, 
+sondern \emph{kleiner} wird, je mehr Widerstände parallel geschaltet werden. 
+Der Grund dafür wird klar, wenn man sich den Widerstand als Tür vorstellt - es
+können \emph{mehr Menschen} hindurchgehen, je mehr \emph{Türen} es gibt. 
 
+Auch hier gilt das Ohmsche Gesetz. Für den Spezialfall von zwei parallel
+geschalteten Widerständen kann die Formel für den Gesamtwiderstand umgestellt 
+werden. Es gilt damit: 
+\begin{center}
+    \begin{equation}
+        R_G = \frac{R_1 \cdot R_2}{R_1 + R_2}
+    \end{equation}
+\end{center}
+
+\subsection{Elektrizitätszähler}
+
+Elektrizitätszähler, bzw. Energiezähler oder Kilowattstundenzähler dienen zur 
+Messung der elektrischen Energie, die man im Haushalt oder in der Industrie
+aus dem Stromnetz bezieht. 
+
+Die elektrische Arbeit wird direkt mit einem Elektrizitätszähler gemessen. 
+Die Anzeige erfolgt digital in der Einheit kWh. 
+
+Für jeden Zähler wird eine Zählerkonstante $C_Z$ angegeben, aus der man
+entnehmen kann, wieviele Umdrehungen der Zählerscheibe (im falle eines 
+mechanischen Zählers) bzw. wieviele Impulse der LED (Im Falle eines 
+elektronischen Zählers) einer kWh entscpricht. 
+
+Für den mechanischen Zähler gilt: 
+
+\begin{center}
+    \begin{equation}
+        C_Z = \frac{Umdrehungen}{kWh}
+    \end{equation}
+\end{center}
+
+Für den elektronischen Zähler gilt: 
+\begin{center}
+    \begin{equation}
+        C_Z = \frac{Impulse}{kWh}
+    \end{equation}
+\end{center}
+
+Außerdem gilt folgendes über die elektrische Arbeit (Watt):
+\begin{center}
+    \begin{equation}
+        W = \frac{n}{C_Z}
+    \end{equation}
+\end{center}
+
+Wobei $n$ der Anzahl Umdrehungen bzw. Impulsen entspricht. 
 
 \section{Digitaltechnik}
 \dots
