@@ -150,8 +150,79 @@ Außerdem gilt folgendes über die elektrische Arbeit (Watt):
 
 Wobei $n$ der Anzahl Umdrehungen bzw. Impulsen entspricht. 
 
+Zur Messung der elektrischen Leistung zählt man die Umdrehungen/Impulse pro 
+Minute und rechnet dann hoch auf die Stunde. Die Leistung errechnet sich dann
+aus: 
+
+\begin{center}
+    \begin{equation}
+        P = \frac{W}{t} = \frac{n}{C_Z \cdot t}
+    \end{equation}
+\end{center}
+
+Oder zur direkten Berechnung in kW:
+
+\begin{center}
+    \begin{equation}
+        P = \frac{1}{\frac{1}{kWh} \cdot h} = kW
+    \end{equation}
+\end{center}
+
 \section{Digitaltechnik}
-\dots
+
+\subsection{Grundverknüpfungen in der Digitaltechnik}
+
+\subsubsection{UND/AND/Konjunktion}
+
+Das UND ist eine Grundverknüpfung, die nach dem Prinzip 
+\emph{"Wenn A und B, dann..."} funktioniert. Der Ausgang $Q$ ist dann immer 1, 
+wenn die Eingänge $A$ und $B$ gleich 1 sind. Das UND wird auch als Konjunktion
+bezeichnet und wird im Englischen \emph{AND} genannt. 
+
+\begin{center}
+    \begin{equation}
+        Q = A \land B
+    \end{equation}
+\end{center}
+
+\subsubsection{ODER/OR/Disjunktion}
+
+Das ODER ist eine Grundverknüpfung, die nach dem Prinzip \emph{"Wenn eine der 
+möglichen Bedingungen war sind, dann ist das Ergebnis wahr"} arbeitet. Der 
+Ausgang Q ist dann immer 1, wenn mindestens einer der Eingänge $A$ und $B$ 1
+sind. Das ODER wird als Disjunktion bezeichnet und wird im Englischen \emph{OR}
+genannt. 
+
+\begin{center}
+    \begin{equation}
+        Q = A \lor B
+    \end{equation}
+\end{center}
+
+\subsubsection{NICHT/NOT/Negation}
+
+Das NICHT ist eine Grundverknüfung, die nach dem Prinzip \emph{"Wenn ein
+Zustand oder eine Aussage wahr ist, dann ist das Ergebnis unwahr"} arbeitet. 
+Das NICHT wird als Negation bezeichnet und wird im Englischen \emph{NOT}
+genannt. 
+
+\begin{center}
+    \begin{equation}
+        Q = \neg A
+    \end{equation}
+\end{center}
+
+\subsubsection{NICHT-UND/NAND/NUND}
+
+
+\begin{center}
+    \begin{equation}
+        Q = \neg(A \land B)
+    \end{equation}
+    \begin{equation}
+        \neg Q = A \land B
+    \end{equation}
+\end{center}
 
 \section{Netzwerktechnik}
 \dots
