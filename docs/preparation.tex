@@ -4,7 +4,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
-\usepackage[a4paper, left=2.5cm, right=2cm, top=2cm]{geometry}
+\usepackage[a4paper, left=2.5cm, right=2cm, top=2cm, bottom=2cm]{geometry}
 
 \title{Prüfungsvorbereitung für die IHK-Abschlussprüfung Teil I}
 \author{L.M.}
@@ -214,6 +214,9 @@ genannt.
 
 \subsubsection{NICHT-UND/NAND/NUND}
 
+Das NICHT-UND ist eine aus UND und NICHT zusammengeschaltete Verknüpfung, welche
+das Ergebnis einer \emph{UND} Verknüpfung negiert. Das NICHT-UND wird auch als 
+NUND bezeichnet und wird im Englischen \emph{NAND} genannt. 
 
 \begin{center}
     \begin{equation}
@@ -222,6 +225,33 @@ genannt.
     \begin{equation}
         \neg Q = A \land B
     \end{equation}
+\end{center}
+
+\subsubsection{NICHT-ODER/NOR/NODER}
+
+Das NICHT-ODER ist eine aus ODER und NICHT zusammengeschaltete Verknüpfung, 
+welche das Ergebnis einer \emph{ODER} Verknüpfung negiert. Das NICHT-ODER wird
+auch als NODER bezeichnet und wird im Englischen \emph{NOR} genannt.
+
+\begin{center}
+	\begin{equation}
+		Q = \neg(A \lor B)
+	\end{equation}
+	\begin{equation}
+		\neg Q = A \lor B
+	\end{equation}
+\end{center}
+
+\subsubsection{Exklusiv-ODER/XOR/Antivalenz}
+
+Das Exklusiv-ODER ist ein zusammengeschaltetes Element aus XNOR und NICHT, 
+welches das Ergebnis einer \emph{XNOR} Verknüpfung negiert. Das Exklusiv-ODER
+wird auch als Antivalenz bezeichnet und wird im Englischen \emph{XOR} genannt. 
+
+\begin{center}
+	\begin{equation}
+		Q = (\neg A \land B) \lor (A \land \neg B)
+	\end{equation}
 \end{center}
 
 \section{Netzwerktechnik}
