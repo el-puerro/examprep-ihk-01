@@ -183,6 +183,15 @@ bezeichnet und wird im Englischen \emph{AND} genannt.
     \begin{equation}
         Q = A \land B
     \end{equation}
+    \begin{tabular}{ | c | c || c | }
+    	\hline
+    	A & B & Q \\ \hline 
+    	0 & 0 & 0 \\ \hline
+    	0 & 1 & 0 \\ \hline
+    	1 & 0 & 0 \\ \hline
+    	1 & 1 & 1 \\ 
+    	\hline
+    \end{tabular}
 \end{center}
 
 \subsubsection{ODER/OR/Disjunktion}
@@ -197,6 +206,15 @@ genannt.
     \begin{equation}
         Q = A \lor B
     \end{equation}
+   \begin{tabular}{ | c | c || c | }
+    	\hline
+    	A & B & Q \\ \hline
+    	0 & 0 & 0 \\ \hline
+    	0 & 1 & 1 \\ \hline
+    	1 & 0 & 1 \\ \hline
+    	1 & 1 & 1 \\ 
+    	\hline
+    \end{tabular}
 \end{center}
 
 \subsubsection{NICHT/NOT/Negation}
@@ -210,6 +228,13 @@ genannt.
     \begin{equation}
         Q = \neg A
     \end{equation}
+	\begin{tabular}{ | c || c | }
+		\hline
+		A & Q \\ \hline
+		0 & 1 \\ \hline
+		1 & 0 \\
+		\hline
+	\end{tabular}
 \end{center}
 
 \subsubsection{NICHT-UND/NAND/NUND}
@@ -225,6 +250,15 @@ NUND bezeichnet und wird im Englischen \emph{NAND} genannt.
     \begin{equation}
         \neg Q = A \land B
     \end{equation}
+   \begin{tabular}{ | c | c || c | }
+    	\hline
+    	A & B & Q \\ \hline
+    	0 & 0 & 1 \\ \hline
+    	0 & 1 & 1 \\ \hline
+    	1 & 0 & 1 \\ \hline
+    	1 & 1 & 0 \\ 
+    	\hline
+    \end{tabular}
 \end{center}
 
 \subsubsection{NICHT-ODER/NOR/NODER}
@@ -240,6 +274,15 @@ auch als NODER bezeichnet und wird im Englischen \emph{NOR} genannt.
 	\begin{equation}
 		\neg Q = A \lor B
 	\end{equation}
+   \begin{tabular}{ | c | c || c | }
+    	\hline
+    	A & B & Q \\ \hline
+    	0 & 0 & 1 \\ \hline
+    	0 & 1 & 0 \\ \hline
+    	1 & 0 & 0 \\ \hline
+    	1 & 1 & 0 \\ 
+    	\hline
+    \end{tabular}
 \end{center}
 
 \subsubsection{Exklusiv-ODER/XOR/Antivalenz}
@@ -252,6 +295,36 @@ wird auch als Antivalenz bezeichnet und wird im Englischen \emph{XOR} genannt.
 	\begin{equation}
 		Q = (\neg A \land B) \lor (A \land \neg B)
 	\end{equation}
+   \begin{tabular}{ | c | c || c | }
+    	\hline
+    	A & B & Q \\ \hline
+    	0 & 0 & 0 \\ \hline
+    	0 & 1 & 1 \\ \hline
+    	1 & 0 & 1 \\ \hline
+    	1 & 1 & 0 \\ 
+    	\hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Exklusiv-NICHT-ODER/XNOR/Äquivalenz}
+
+Das Exklusiv-NICHT-ODER ist eine zusammengeschaltete Verknüpfung, dessen Ausgang
+immer dann 1 ist, wenn alle Eingänge 2 sind. Das Exklusiv-NICHT-ODER wird auch
+als Äquivalenz bezeichnet und wird im Englischen \emph{XNOR} genannt. 
+
+\begin{center}
+	\begin{equation}
+		Q = (A \land B) \lor (\neg A \land \neg B)
+	\end{equation}
+   \begin{tabular}{ | c | c || c | }
+    	\hline
+    	A & B & Q \\ \hline
+    	0 & 0 & 1 \\ \hline
+    	0 & 1 & 0 \\ \hline
+    	1 & 0 & 0 \\ \hline
+    	1 & 1 & 1 \\ 
+    	\hline
+    \end{tabular}
 \end{center}
 
 \section{Netzwerktechnik}
