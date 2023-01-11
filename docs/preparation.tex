@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 12pt]{report}
 
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
@@ -12,6 +12,10 @@
 \begin{document}
 \maketitle
 
+\tableofcontents
+
+\newpage
+\chapter{Entwicklung vernetzter Prozesse}
 \section{Elektrotechnik}
 \subsection{Grundgrößen der Elektrotechnik}
 
@@ -141,6 +145,7 @@ Für den elektronischen Zähler gilt:
     \end{equation}
 \end{center}
 
+\newpage
 Außerdem gilt folgendes über die elektrische Arbeit (Watt):
 \begin{center}
     \begin{equation}
@@ -349,6 +354,8 @@ Schaltformeln. Ein KV-Diagramm für vier Eingänge könnte wie folgt aussehen:
     \end{tabular}
 \end{center}
 
+
+\newpage
 \subsection{Schaltalgebra}
 
 \subsubsection{Negation}
@@ -422,8 +429,8 @@ Wenn man auf \emph{ODER}-Verknüpfungen verzichten will, dann kann man aus
 aufbauen.
 
 
-\section{Netzwerktechnik}
-\subsection{strukturierte Verkabelung}
+\section{Netzwerktechnik (Hardware)}
+\subsection{Strukturierte Verkabelung}
 
 Die \emph{Strukturierte Verkabelung} fokussiert sich auf drei diskrete Bereiche:
 \begin{enumerate}
@@ -432,7 +439,197 @@ Die \emph{Strukturierte Verkabelung} fokussiert sich auf drei diskrete Bereiche:
     \item Primärbereich: \emph{zwischen Gebäuden}
 \end{enumerate}
 
+\subsubsection{Primärbereich}
+Es werden (falls nötig auch von einem Standortverteiler aus) einzelne Leitungen
+zu den Gebäuden gelegt. Im \emph{Primärbereich} machen eigentlich nur
+Lichtwellenleiter Sinn. \\
+
+Zunächst besteht bei Kupferleitungen das Problem, dass diese nur maximal 100
+Meter überbrücken kann. Außerdem bestehen bei Kupferleitungen, da sie den 
+elektrischen Strom leiten, die Gefahr der sog. \emph{Potentialverschleppung} 
+zwischen den Gebäuden. Eine galvanische Trennung wäre mit Kupfer also nicht 
+realisierbar. \\
+
+Solch eine Potentialverschleppung \emph{wird} sich höchstwahrscheinlich durch 
+Brummen und Störungen auf den Telefonleitungen, Netzwerkkabeln und TV-Leitungen 
+bemerkbar machen, und im schlimmsten Fall die Endgeräte schädigen. Zusätzlich 
+\emph{können} in ungünstigen Fällen Menschen und Tiere durch Stromschläge 
+gefährdet werden und es können Brände entstehen. \\
+
+Mit Lichtwellenleitern wird die Datenübertragung nicht über Stromimpulse
+realisiert, sondern mit Lichtimpulsen. Sie leiten keinen Strom und ermöglichen 
+dadurch eine \emph{Galvanische Trennung}, wodurch eine mögliche Quelle von
+elektromagnetischen Störungen vermieden werden kann. Außerdem können 
+Lichtwellenleiter auf längere Strecken eingesetzt werden und haben eine 
+\emph{deutlich} höhere Datenübertragungsrate. \\
+
+Es besteht theoretisch auch die Möglichkeit, den Primärbereich via \emph{Funk}
+zu realisieren, allerdings gibt es einige Nachteile: 
+
+\begin{itemize}
+    \item Langsame Datenübertragungsrate
+    \item Begrenzte Reichweite
+    \item Es ist eine direkte Sichtverbindung erforderlich
+    \item Daten sind einfacher von Angreifern abzugreifen als bei bsp. 
+        Lichtwellenleitern
+\end{itemize}
+
+\newpage
+\subsubsection{Sekundärbereich}
+
+Im \emph{Sekundärbereich} gibt es keine allgemeingültig bessere Entscheidung
+zur strukturierten Verkabelung - es muss von Fall zu Fall auf Basis vielfältiger 
+\emph{Faktoren} entschieden werden. Es sind sowohl Kupfer- wie auch 
+Lichtwellenleiter einsetzbar und ist anhand der Gebäudegröße sowie dem zu
+erwartenden Traffic zu entscheiden.
+
+\subsubsection{Tertiärbereich}
+
+Im \emph{Tertiärbereich} ist allgemein Kupfer zu empfehlen, da praktisch alle 
+Endgeräte ein Kupferkabel mit einem \emph{RJ45}-Stecker erwarten. Die ohnehin 
+relativierbaren Performanceunterschiede auf diesen kurzen Strecken werden 
+durch das Wechseln auf Kupfer/RJ45-Stecker völlig negiert, da insbesondere der
+RJ45-Stecker die Geschwindigkeit auf einen Gigabit pro Sekunde limitiert. 
+Außerdem bieten Kupferkabel die Möglichkeit zum Betrieb mit 
+\emph{Power over Ethernet (PoE)}, was mit Glasfaserleitungen unmöglich ist. 
+
+\subsection{Lichtwellenleiter}
+
+\emph{Lichtwellenleiter}, auch \emph{Glasfaserleitungen} genannt, sind 
+Kabel aus Glasfaser, die digitale Signale üer Lichtimpulse übertragen. Sie 
+bestehen u.a. aus einem \emph{Faserkern}, einem \emph{Cladding} und einem 
+\emph{Coating}. 
+
+Lichtwellenleiter kommen in verschiedenen Varianten: \emph{Singlemode} und 
+\emph{Multimode}. 
+
+\subsubsection{Physikalische Zusammenhänge}
+
+Bevor die Einsatzgebiete von Singlemode- und Multimodeleitungen erklärt werden
+können muss zuerst erklärt werden, was eine \emph{Mode} ist. \\ 
+
+Die Lichtwellenführung basiert auf der \emph{Totalreflexion}. Dies ist ein
+besonderer Fall der Lichtbrechung, die beim Wechsel von Licht von einem 
+dichteren in ein weniger dichtes Medium wechselt (bsp. Brechung eines 
+Lichtstrahls im Übergang von Wasser in Luft). Tritt dieser besondere Fall auf, 
+dann \emph{bricht das Licht weg} vom gedachten \glqq Lot\grqq{}. Deshalb 
+ist die Optische Dichte des Faserkerns auch höher, als des 
+Claddings(Glasmantels). \\
+
+Die \emph{Totalreflexion} ist jedoch nur unter \emph{diskreten 
+Einkopplungswinkeln} möglich. Jeder dieser diskreten Winkel stellen einen 
+getrennten Ausbreitungsweg dar - die sog. \emph{Mode}. \\
+
+wird das Licht in verschiedenen Moden eingekoppelt, so durchlaufen verschiedene 
+Lichtanteile verschiedene Strecken, wodurch sich für die verschiedenen Moden 
+verschiedene Laufzeiten ergeben. Das wird auch \emph{Modendispersion} 
+genannt. Ab ca. 9$\mu$m ist nur noch die Ausbreitung einer einzelnen Mode 
+möglich. 
+
+\newpage
+\subsubsection{Verschiedene Arten von Lichtwellenleitern}
+
+Ein Lichtwellenleiter, der nur eine Mode durch das Kabel lassen kann, wird 
+\emph{Singlemode LWL} genannt (im Kontrast zu \emph{Multimode LWL}, wo
+hunderte von Übertragungsmoden möglich sind). In einem Singlemodefiber ist somit
+keine Modendispersion möglich. \\
+
+Dadurch ist ein Singlemodefiber besser dafür geeignet, lange Strecken im 
+Kilometerbereich zu überbrücken. Für kürzere Strecken sind Singlemodefiber jeoch
+zu Teuer, hier reichen Multimodefiber vollkommen aus, da auf so kurzen Distanzen
+die Modendispersion nur einen minimalen Impact, \emph{wenn überhaupt} hat. \\
+
+LWL-Kabel werden überwiegend mit zwei Steckertypen eingesetzt: LC und SC. \\
+
+SC ist ein der ältere, größere Standard, welcher weit verbreitet ist. Er wird 
+mit einer GBIC-Steckdose in einem Switch, Patchpanel, etc. verwendet. \\
+
+LC ist ein etwas neuerer Standard mit einem kleineren Formfaktor. Er wird 
+mit einer SFP- bzw. einem SFP+-Steckdose genutzt. LC-Stecker gibt es in 
+\emph{Simplex-} (Unidirektional) und \emph{Duplex-} (Bidirektional) Varianten. 
+
+\subsection{WLAN}
+
+WLAN-Funk gibt es in zwei verschiedenen Standards bzw. Frequenzbereichen: 
+\emph{IEEE802.11g bzw. 2,4 GHz und IEEE802.11ac/ax bzw. 5 GHz}, wobei 5 GHz-WLAN 
+der neuere ist. \\
+
+Es gilt zu beachten, dass das 2,4 GHz-WLAN nur eine maximale Übertragunsrate von 
+54 Mbit/s erlaubt. Außerdem beginnt der Frequenzbereich bei 2,4 GHz und endet 
+bei 2,4835 GHz. Bei einer Frequenzbereichsbreite von $$Df = 2,4835 GHz - 2,4 
+GHz = 0,0835 GHz = 83,5 MHz$$ und einer Aufteilung auf 13 Kanäle mit einem 
+Freqenzbereich von jeweils 20 MHz \emph{müssen} sich die Kanäle zwangsläufig 
+überlappen. Damit bleiben nur vier Kanäle, die sich nicht überlappen: 1, 5, 9 
+und 13. Dieses Problem hat 5 GHz-WLAN nicht - Es stehen (zumindest in 
+Deutschland) 68 Kanäle mit einer theoretischen Höchstgeschwindigkeit von 
+1 Gbit/s zuur Verfügung. \\
+
+Es sollten folgende Planungsaspekte für ein flächendeckendes WLAN beachtet 
+werden: 
+
+\begin{itemize}
+    \item Optimale Anbindung durch Vernetzung aller APs über Netzwerkkabel
+    \item Alle Bereiche müssen ausgeleuchtet sein
+    \item Entstehende Überlappung muss durch entsprechende Kanalwahl 
+        entgegengewirkt werden
+    \item Name des WLAN \emph{(SSID)} muss an allen APs gleich sein
+    \item Sicherheitseinstellungen \emph{(WEP/WPA(2, 3)/\dots)} sollten an allen 
+        APs gleich sein
+    \item Eventuell eine verringerte Abstrahlleistung wählen (bei hoher 
+        Teilnehmerzahl)
+    \item Bei größerer Netzteilnehmerzahl nach Möglichkeit auf einen gemeinsamen 
+        Schlüssel verzichten
+\end{itemize}
+
+\subsection{Switch vs. Hub/Auswahlkriterien für einen Switch}
+
+Ein \emph{Hub} ist ein Netzwerkgerät, welches das Netzwerk als gemeinsames 
+Medium bereitstellt. Jede Nachricht wird grundsätzlich an jeden 
+Netzwerkteilnehmer geschickt. Das kann für eine hohe Netzwerkauslastung und für 
+Kollisionen sorgen. Außerdem ist die Sicherheit fraglich, da \emph{jede PDU} an 
+\emph{jeden Netzteilnehmer} geschickt wird. \\
+
+Ein \emph{Switch} ist ein Netzwerkgerät, welches anhand von der MAC-Adresse und 
+dem eigenem ARP-Table entscheidet, für welchen Netzteilnehmer welche Nachricht 
+bestimmt ist. \\
+
+Es bestehen folgende \emph{(mögliche)} Auswahlkriterien für Switches:
+
+\begin{itemize}
+    \item Die Portanzahl (mit Blick auf die Nutzerzahl und dem zu erwartenden 
+        Traffic)
+    \item Portgeschwindigkeit/Bandbreite je Port/Bandbreite der internen 
+        Backplane
+    \item Besondere Funktionen: 
+        \begin{itemize}
+            \item \emph{Spanning Tree Protocol} Unterstützung
+            \item VLAN
+            \item LACP (Link Aggregation)
+            \item Network Access Control
+            \item RADIUS
+        \end{itemize}
+    \item Portarten \emph{(Kupfer, GBIC, SFP, SFP+)}
+    \item PoE/PoE+, maximale Gesamtleistung
+    \item Lüfterloses Design
+    \item Energieeffizienz
+    \item Managed/Unmanaged
+    \item Abmessungen (z.B. 19\dq oder Desktop)
+    \item Latenzzeit beim Switching
+    \item Switchingarten (Store-and-Forward, Fast-Forwarding, Cut-Through)
+    \item Layer-2 vs Layer-3-Switch (Letzteres bietet auch Routing-Funktionen)
+    \item Stacking
+\end{itemize}
+
+% Kann mir nicht vorstellen, dass das in der IHK-Prüfung relevant wird
+% \subsubsection{Switchingverfahren}
+
+\newpage
+\subsection{Netztopologien}
+
+
 % ITD/Wirtschafts- und Betriebslehre
+\chapter{Gestaltung von IT-Dienstleistungen/Wirtschafts- und Betriebslehre}
+
 \section{Das Duale Ausbildungssystem}
 \dots 
 
@@ -502,7 +699,10 @@ Die \emph{Strukturierte Verkabelung} fokussiert sich auf drei diskrete Bereiche:
 \section{Serviceanfragen einordnen und schnelle Hilfe anbieten (Problem Management)}
 \dots
 
+
 % SWD
+\chapter{Softwaretechnologie und Datenmanagement}
+
 \section{Grundlagen zur Informationssicherheit erarbeiten}
 \dots
 
