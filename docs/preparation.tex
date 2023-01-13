@@ -5,6 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
 \usepackage[a4paper, left=2.5cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath}
 
 \title{Prüfungsvorbereitung für die IHK-Abschlussprüfung Teil I}
 \author{L.M.}
@@ -676,9 +677,109 @@ die Installation über mehrere Switches hinweg zu realisieren. Jedes virtuelle
 Netz benötigt allerdings eine eigene Verbindung, daher müssen die Switches mit 
 zwei Kabeln verbunden werden. 
 
+\newpage
 \subsubsection{Tagged VLAN}
+\emph{Tagged VLANs} arbeiten im Gegensatz tu portbasierten VLANs framebasiert. 
+Eine \emph{Markierung} im Frame der Nachricht, auch \emph{Tag} genannt, sorgt 
+für die Zuordnung. Der \emph{Tag} enthält die Information über den 
+Aufenthaltsort, signalisiert dem Switch, wo die Kommunikation stattfindet und
+leitet die Nachricht entsprechend dorthin. ein Port wird dabei nicht in einem 
+einzelnen, sondern mehreren VLANs zugeordnet. Eine weitere Option ist ein 
+\emph{VLAN Trunk}. Dieser wird von vielen Switches angeboten und leitet VLAN
+Frames für die jeweiligen VLAN IDs weiter.
 
+\subsection{Binärprefixe}
 
+% Tut mir leid Hr. Klimkeit, ich kann es nicht übers Herz bringen, im 21. 
+% Jahrhundert noch EDV zu sagen...
+Auch abseits der IT-Welt sind Präfixe (sog. \emph{SI-Präfixe}) üblich, um Zahlen
+besser handhabbar zu machen, z.B. 1m anstelle von 1000mm. \\
+
+Die dahinterstehende Mathematik beruht bekannterweise darauf, dass man durch 
+den Faktor $10^3 = 1000$ dividiert bzw. multipliziert. Die üblichen Präfixe
+lauten: 
+
+\begin{itemize}
+    \item Tera (Vorsatz \emph{T})
+    \item Giga (Vorsatz \emph{G})
+    \item Mega (Vorsatz \emph{M})
+    \item Kilo (Vorsatz \emph{k})
+    \item Milli (Vorsatz \emph{m})
+    \item Micro (Vorsatz \emph{$\mu$})
+    \item Nano (Vorsatz \emph{n})
+\end{itemize}
+
+In der o.g. Reihenfolge gilt es immer \emph{\glqq mal 1000\grqq{}} zu rechnen, 
+um eine Zahl ins SI-Präfix der darunterliegenden Zeile umzurechnen, bzw. 
+\emph{\glqq durch 1000\grqq{}}, um eine Zahl ins SI-Präfix der darüberliegenden 
+Zeile umzurechnen, was immer eine Verschiebung des Kommas um drei Stellen nach 
+rechts bzw. links entspricht. \\
+
+Dieser Ansatz scheitert jedoch bei der Übertragung ins Binärsystem, da der 
+Umrechungsfaktor \emph{$2^3 = 8$} die Zahl nicht großartig handhabbarer machen
+würde. Daher sind im Binärsystem zwei unterschiedliche Ansätze üblich:
+
+\begin{itemize}
+    \item[a)] Verwendung des Umrechnungsfaktors \emph{1000}
+        \begin{itemize}
+            \item Vorteil: Identisches Vorgehen zur bekannten Umrechnung des 
+                Dezimalsystems
+            \item Nachteil: Die resultierende Zahl wird im Dezimalsystem 
+                üblicherweise zu einer Kommazahl mit entsprechend erhöhtem 
+                Rechenaufwand sowie einem Genauigkeitsverlust und einer 
+                erschwerten Weiterverarbeitung
+        \end{itemize}
+    \item[b)] Verwendung eines neuen Umrechnungsfaktors der Art $2^x$
+        \begin{itemize}
+            \item Vorteil: Es ergeben sich im Binärsystem keine unnötigen 
+                Kommazahlen
+            \item Nachteil: Der Umrechnungsfaktor kann nicht mehr identisch zum
+                altbekannten Umrechnungsfaktor sein
+        \end{itemize}
+\end{itemize}
+
+\emph{Kurz gesagt:}  Beide Vorangehensweisen haben Vor- und Nachteile und beide 
+Ansätze finden Verwendung. Bei Ansatz \emph{B} bleibt dann noch festzulegen, 
+welchen x-Wert man für den Umrechnungsfaktor $2^x$ einsetzt - Das ist 
+prinzipiell willkürlich, aber man hat hier sinnigerweise $x = 10$ gewählt, da 
+$2^10 = 1024$ einen Umrechnungsfaktor ergibt, der sehr nahe an dem üblichen 
+Umrechnungsfaktor 1000 liegt. \\
+
+Aufgrunddessen ist es in der Informatik bzw. IT wichtig zu kennzeichnen, ob
+das genutzte Präfix den \emph{1000er-Umrechnungsfaktor} oder den 
+\emph{1024er-Umrechnungsfaktor} zugrunde legt. Falls der 
+\emph{1024er-Umrechnungsfaktor} verwendet wurde, kommt folgende 
+\emph{Binärprefixe} zum Einsatz: 
+
+\begin{itemize}
+    \item Tebi (Vorsatz \emph{Ti} statt \emph{T})
+    \item Gibi (Vorsatz \emph{Gi} statt \emph{G})
+    \item Mebi (Vorsatz \emph{Mi} statt \emph{M})
+    \item Kibi (Vorsatz {Ki} statt \emph{k})
+\end{itemize}
+
+Wie so häufig in der IT hält sich aber leider nicht jeder an diesen 
+nicht-bindenden Standard, bsp. zeigt \emph{Microsoft Windows} die 
+Festplattengröße als GB an, obwohl GiB gemeint ist. Im Kontrast geben
+\emph{Festplattenhersteller} die Speicherkapazität in GB an \emph{und meinen 
+das auch so!} \\
+
+Aus diesem Grund muss zwischen den \emph{SI-Präfixen} und den 
+\emph{Binärprefixen} umgerechnet werden können. Ein Rechenweg von TB in 
+TiB sieht beispielsweise so aus: 
+
+\begin{center}
+    \begin{equation}
+        \begin{split}
+            2TB \cdot \frac{1000 \frac{GB}{TB}}{1024 \frac{GiB}{TiB}} 
+            \cdot \frac{1000 \frac{MB}{GB}}{1024 \frac{MiB}{GiB}} 
+            \cdot \frac{1000 \frac{kB}{MB}}{1024 \frac{kiB}{MiB}} 
+            \cdot \frac{1000 \frac{Byte}{kB}}{1024 \frac{Byte}{kiB}} 
+            = 2TB \cdot \left( \frac{1000}{1024}^4 \right) \frac{TiB}{TB} 
+            \approx 1,82 TiB
+        \end{split}
+    \end{equation}
+\end{center}
 
 
 
