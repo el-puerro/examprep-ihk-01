@@ -863,6 +863,86 @@ TiB sieht beispielsweise so aus:
 \emph{Alle anderen Schichten sind für diese Zwischenprüfung von untergeordneter
 Relevanz}
 
+\subsection{IP-Adressenaufbau und Subnetzmaske}
+
+Eine IP-Adresse besteht aus 4 mit Punkten voneinander getrennten Bytes, die im 
+IP-Kontekt auch \emph{Oktette} genannt werden. Eine IP-Adresse sieht also 
+eigentlich so aus: \\
+
+\begin{center}
+$11000000.10101000.00000000.00000010$
+\end{center}
+
+Dazu muss man noch die dazugehörige \emph{Subnetzmaske} angeben, damit das Netz 
+daraus hervorgeht. Diese sieht wie folgt aus: \\
+
+\begin{center}
+    $11111111.11111111.11111111.00000000 (255.255.255.0)$
+\end{center}
+
+Mithilfe der Subnetzmaske kann aus einer gegebenen IP-ADresse jede IP-Adresse 
+des gleichen Netzwerks abgeleitet werden. \\
+
+Die Network-Address wird mathematisch ermittlet, indem die gegebene IP-Adresse
+mit der Subnetzmaske UND-verknüpft wird. \\
+
+\begin{center}
+    \begin{equation}
+        \begin{aligned}
+             & 11111111.11111111.11111111.00000000 \\ 
+             \land & 11000000.10101000.00000000.00000010 \\
+             = & 11000000.10101000.00000000.00000000 (192.168.0.0)
+        \end{aligned}
+    \end{equation}
+\end{center}
+
+\textbf{Beachte:} Die Netzwerk-Adresse ist \emph{immer} die erste Adresse des 
+Netzwerks und die Broadcast-Adresse ist \emph{immer} die letzte Adresse des 
+Netzwerks. 
+
+\subsection{Netzwerkklassen, CIDR, Subnetting}
+
+Zu Beginn der IPv4-Zeit hat man Netze festgelegt, indem man ganze Oktette auf 1 
+bzw. 0 gesetzt hat. Daraus bilden sich sogenannte Netzklassen mit den folgenden 
+Subnetzmasken: \\
+
+\begin{itemize}
+    \item $255.0.0.0$
+    \item $255.255.0.0$
+    \item $255.255.255.0$
+\end{itemize}
+
+Aber die Netzklasse ist nicht mit diesen Subnetzmasken gleichzusetzen. Die 
+Subnetzmaske ergibt sich nur aus der Bitabfolge im ersten Oktett: 
+\begin{center}
+    \begin{tabular}{ | c | c | c | c | }
+        \hline
+        Anzahl der 1 im 1. Oktett & Erste IP & letzte IP & Netzklasse \\ \hline
+        0 & $0.0.0.0$ & $127.255.255.255$ & Class A \\ \hline
+        1 & $128.0.0.0$ & $191.255.255.255$ & Class B \\ \hline
+        2 & $192.0.0.0$ & $223.255.255.255$ & Class C \\ \hline
+    \end{tabular}
+\end{center}
+
+Über die Zeit hast sich das als zu unflexibel erwiesen, weshalb sich das 
+Classless Inter-Domain Routing (kurz: CIDR) durchgesetzt hat. Hiermit werden 
+Netzwerke Bit-Genau definiert, und nicht mit ganzem Oktett. Diese Schreibweise 
+sieht so aus: \\
+
+$192.168.0.0/24$ \\
+
+Das $/24$ gibt hierbei die Subnetzmaske an, bzw. wieviele Bits (von links nach 
+rechts) auf 1 in der Subnetzmaske gesetzt ist. Aus dem Beispiel ergibt sich eine 
+Subnetzmaske von $255.255.255.0$ (3 Bytes, bzw. 24 Bits von Links nach Rechts 
+sind auf 1 gesetzt und bilden den Host-Anteil). Hiermit kann man dann alle 
+IP-Adressen des Netzwerks ausrechnen. Die Anzahl der IP-Adressen lassen sich 
+durch $2^{32 - n}$, wobei n die CIDR-Angabe ist. Für die Anzahl an Hosts müssen
+vom Ergebnis nur noch 2 subtrahiert werden. \\
+
+
+
+
+
 % ITD/Wirtschafts- und Betriebslehre
 \chapter{Gestaltung von IT-Dienstleistungen/Wirtschafts- und Betriebslehre}
 
