@@ -939,7 +939,16 @@ IP-Adressen des Netzwerks ausrechnen. Die Anzahl der IP-Adressen lassen sich
 durch $2^{32 - n}$, wobei n die CIDR-Angabe ist. Für die Anzahl an Hosts müssen
 vom Ergebnis nur noch 2 subtrahiert werden. \\
 
+Eine Schnellere Methode zur Ermittlung von Netzwerk- und Broadcast-Adresse wäre 
+die Ermittlung des \emph{bösen} Oktetts. \\
 
+Ein $192.168.0.192/25$ Netz hätte 3 volle Oktetts, und ein 10000000 Byte. Daraus 
+ergibt sich eine Subnetzmaske von $255.255.255.128$. Das Ermitteln der 
+Subnetzmaske ist nicht notwendig, da sich hier die Netzwerkadresse 
+$192.168.0.128$ und die Broadcast-Adresse $192.168.0.255$ ergibt. \\
+
+Die Anzahl der IP-Adressen ist $2^{32-25 = 128}$. Die Anzahl der Host-Adressen 
+ist $128 - 2 = 126$. 
 
 
 
