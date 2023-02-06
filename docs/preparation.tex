@@ -950,7 +950,22 @@ $192.168.0.128$ und die Broadcast-Adresse $192.168.0.255$ ergibt. \\
 Die Anzahl der IP-Adressen ist $2^{32-25 = 128}$. Die Anzahl der Host-Adressen 
 ist $128 - 2 = 126$. 
 
+\subsection{Statisches Routing}
 
+Router können grundsätzlich nur Netze kennen, an denen sie direkt angeschlossen 
+sind - Falls Daten bei einem Router eintraffen, deren Zieladresse in einem (für 
+den Router) fremden Netz liegt, werden diese Daten nicht geroutet. \\
+
+Um Daten in ein anderes Netz routen kann, muss ein \emph{Routing-Table} 
+aufgesetzt werden. Einträge in diesen Routing-Tables können wie folgt aussehen: 
+
+\begin{itemize}
+    \item $172.16.0.0/24$ via $10.0.0.2$
+    \item $172.16.1.0/24$ via $10.0.0.2$
+\end{itemize}
+
+Wobei $10.0.0.2$ die IP des Interfaces ist, wo die entsprechenden Pakete 
+hinsollen. 
 
 % ITD/Wirtschafts- und Betriebslehre
 \chapter{Gestaltung von IT-Dienstleistungen/Wirtschafts- und Betriebslehre}
