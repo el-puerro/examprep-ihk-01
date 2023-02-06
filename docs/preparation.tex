@@ -965,7 +965,94 @@ aufgesetzt werden. Einträge in diesen Routing-Tables können wie folgt aussehen
 \end{itemize}
 
 Wobei $10.0.0.2$ die IP des Interfaces ist, wo die entsprechenden Pakete 
-hinsollen. 
+hinsollen. Beim statischen Routing geht es darum, einen Output für ein 
+bestimmtes Netz anzugeben. Die angegebenen netze können die \emph{eigentlichen}
+Netze auch zusammenfassen, die beiden oberen Beispiele lassen sich 
+beispielsweise zu einem $172.16.0.0/23$ Netz zusammenfassen. \\
+
+\textbf{Beachte:} im Normalfall wird eine Default-Route angegeben, z.B. in Form
+von $0.0.0.0/0$ via $10.0.0.1$. Die Default-Route wird auch für den 
+Internet-Zugriff genutzt. 
+
+\subsection{Network Address Translation}
+
+\noindent \emph{Natting ist Routing mit Benefits ~EVP-Lehrer der Mittelstufe}\\
+
+NAT ermöglicht unter anderem die gleichzeitige Verwendung einer öffentlichen 
+IPv4-Adresse durch mehrere Hosts. Üblicherweise übernimmt ein Router im Netzwerk
+die SNAT, der die Verbindung zum Internet herstellt. \\
+
+NAT wird in \emph{Source-NAT} und \emph{Destination-NAT} unterschieden. Beim 
+Source-NAT wird die Adresse des verbundungsaufbauenden Computers (Quelle) 
+umgeschrieben. Beim Destination-NAT ist es die Adresse des angesprochenen 
+Computers (Ziel), die umgeschrieben wird. 
+
+\subsubsection{Source-NAT}
+
+Bei jedem Verbindungsaufbau durch einen internen Cliernt wird die \emph{interne 
+Quell-IP-Adresse} durch die öffentliche IP-Adresse des Routers ersetzt. Außerdem 
+wird der Quellport des internen Clients durch einen freien Port des Routers 
+ersetzt, falls der Ursprungsort belegt ist. Diese Zuordnung wird in der 
+\emph{Session-Table (NAT-Table)} des Routers gespeichert. Anhand der 
+gespeicherten Informationen kann der NAT-Router dann das jeweilige 
+Antwort-Datenpaket dem richtigen Client wieder zuordnen. \\
+
+Am meisten findet Source-NAT Anwendung aufgrund der Knappheit an 
+\emph{öffentlichen IPv4-Adressen} und der Tendenz, immer mehr Haushalte mit dem
+Internet zu verbinden. 
+
+\subsubsection{Destination-NAT}
+
+Bei jedem Verbindungsaufbau durch den Client wird die \emph{Ziel-IP-Adresse} 
+durch die des eigentlichen Empfängers im LAN ersetzt. Außerdem wird der 
+\emph{Ziel-Port} durch einen freien Port des Routers ersetzt, der dadurch 
+belegt wird. Diese Zuordnung wird in der NAT-Table des Routers gespeichert. \\
+
+Destination-NAT wird verwendet, um das Ziel eines IP-Pakets zu ändern. Am 
+häufigsten findet DNAT Verwendung beim Ändern der öffentlichen IP eines 
+Internet-Anschlusses in die private IP-Adresse eines Servers im privaten 
+Subnetz. Diese Methode ist als \emph{port-forwarding} in Verbindung mit UDP/TCP 
+Verbindungen bekannt. DNAT kann daher auch genutzt werden, um mehrere, 
+unterschiedliche Serverdienste, die auf verschiedenen Computern betrieben 
+werden, unter einer einzigen (öffentlichen) IP-Adresse anzubieten. 
+
+\subsection{IPv6}
+
+IPv6 ist ein neueres Internet-Protokoll, welches insbesondere dafür entwickelt 
+wurde, um der Adressenknappheit von IPv4 Abhilfe zu schaffen. Weitere Gründe 
+für die Neuentwicklung des Internet-Protokolls wären beispielsweise 
+
+\begin{enumerate}
+	\item die Vereinfachung und Verbesserung des Protokollrahmens, u.a. um
+		Router von Rechenaufwand zu entlasten und 
+	\item Zustandslose automatische Konfiguration von IPv6-Adressen (
+		Verfahren wie DHCP wären häufig überflüssig). 
+\end{enumerate}
+
+\subsubsection{Aufbau}
+
+Eine IPv6-Adresse hat eine Länge von 128 Bit und wird in hexadezimaler 
+Schreibweise als Blöcke zu je 4 Ziffern dargestellt:
+
+\begin{equation}
+	0123:4567:89ab:cdef:0123:4567:89ab:cdef
+\end{equation}
+
+Hier gilt: 
+\begin{itemize}
+	\item Führende Nullen dürfen in jedem Block weckgelassen werden
+	\item Eine beliebige Anzahl von aufeinanderfolgenden Blöcken, die 
+		komplett Null sind dürfen durch \textbf{::} abgekürzt werden; 
+		Um die Schreibweise weiterhin eindeutig zu halten ist diese 
+		Verkürzung nur einmal pro IPv6-Adresse erlaubt (man kürzt immer 
+		den größten Nummernblock)
+	\item Die ersten 64-Bit werden als \emph{Network-Identifier} (ggf inkl. 
+		Subnet-Identifier) bezeichnet
+	\item Die letzten 64-Bit werden als \emph{Interface-Identifier} 
+		bezeichnet
+\end{itemize}
+
+
 
 % ITD/Wirtschafts- und Betriebslehre
 \chapter{Gestaltung von IT-Dienstleistungen/Wirtschafts- und Betriebslehre}
