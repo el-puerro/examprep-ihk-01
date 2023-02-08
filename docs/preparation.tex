@@ -1061,7 +1061,29 @@ Hier gilt:
 		vergeben wird)
 	\item \textbf{FE80::/10} Link-Local-Adresse (Unicast-Adresse, die den 
 		Host-Comuter im lokalen netzwerk identifiziert. Nicht route-bar)
+	\item \textbf{FC00::/7} Unique-Local-Adresse (wie Link-Local aber 
+		route-bar in lokalen Intranets, aber nicht im Internet; 
+		vergleichbar mit privaten IPv4-Adressen). Aufteilung der 
+		Network-ID: 
+	\begin{itemize}
+		\item Erste 8 Bits stehen fest \emph{(FC/FD)}
+		\item Nächste 40 Bit identifizieren den Eigentümer:
+		\begin{itemize}
+			\item Innerhalb FC00::/8: Geplant ist die 
+				Zuteilung durch zentrale Vergabe-
+				Institution
+			\item Innerhalb FD00::/8: eigenverantwortlich 
+				pro Standort zufällig
+		\end{itemize}
+		\item Nächste 16 Bit zur Privaten Netzbildung
+	\end{itemize}
+	\item \textbf{FF00::/8} Multicast-Adresse - vergleichbar mit 
+		$224.0.0.0/4$
 \end{itemize}
+
+\subsubsection{Interface-Identifier-Bildung}
+
+Der
 
 % ITD/Wirtschafts- und Betriebslehre
 \chapter{Gestaltung von IT-Dienstleistungen/Wirtschafts- und Betriebslehre}
