@@ -976,7 +976,7 @@ Internet-Zugriff genutzt.
 
 \subsection{Network Address Translation}
 
-\noindent \emph{Natting ist Routing mit Benefits ~EVP-Lehrer der Mittelstufe}\\
+\noindent \emph{Natting ist Routing mit Benefits (EVP-Lehrer der Mittelstufe))}\\
 
 NAT ermöglicht unter anderem die gleichzeitige Verwendung einer öffentlichen 
 IPv4-Adresse durch mehrere Hosts. Üblicherweise übernimmt ein Router im Netzwerk
@@ -1083,7 +1083,42 @@ Hier gilt:
 
 \subsubsection{Interface-Identifier-Bildung}
 
-Der
+Der \emph{Interface-Identifier} wird in der Regel anhand der MAC-Adresse 
+festgelegt (EUI-64-Verfahren). Diese wird wie folgt gebildet: 
+
+\begin{itemize}
+	\item Die MAC-Adresse wird in der Mitte \emph{zerschnitten} (in 
+		Herstellerkennung und Adapterkennung von je 24 Bit getrennt)
+	\item Das 7. Bit \emph{(U/L Bit)} wird geflippt
+	\item Zwischen Herstellerkennung und Adapterkennung wird die Bitfolge 
+		\textbf{ff:fe} gesetzt und alles wieder konkattiniert
+\end{itemize}
+
+\noindent \textbf{Problem: identifizierbarkeit einzelner Arbeitsstationen, 
+weshalb es die \emph{Privacy Extentions} und die \emph{Stable-Privacy} 
+Erweiterung gibt.}
+
+\subsubsection{SLAAC - Stateless Address Autoconfiguration}
+
+\begin{enumerate}
+	\item Client führt zunächst eine sog. \emph{Router Solicitation} durch 
+		(Bestandteil des NDP (Neighbour Discovery Protocol). Es ist kein
+		Broadcast nötig, sondern nur Multicast)
+	\item Client erhält \emph{Router Advertisement} vom Router und erhält 
+		daraus das gültige Netzwerkpräfix und GW
+	\item Falls das Client-Netz von der Größe /64 ist, wird der Client 
+		mittels EUI-64 einen Interface-Identifier erzeugen 
+	\item Zusätzlich bindet jedes Gerät eine sog. Link-Local-Adresse 
+		(FE80::/64), deren interface-Identifier auch nach dem 
+		EUI-64-Verfahren gebildet wird
+\end{enumerate}
+
+\textbf{Folgerung:} Netze sollten immer /64 groß sein. Subnetting ergibt sich in 
+den oberen 64-bit, indem der Provider eine Präfixlänge kleiner 64 anbietet. Wird
+Provider-seitig z.b. ein /60 bereitgestellt verbleiben 4 bits zum Subnetting, 
+was $2^{4} = 16$ Subnetze erlaubt. 
+
+
 
 % ITD/Wirtschafts- und Betriebslehre
 \chapter{Gestaltung von IT-Dienstleistungen/Wirtschafts- und Betriebslehre}
