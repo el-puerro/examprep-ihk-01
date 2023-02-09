@@ -3213,7 +3213,7 @@ Geschäftsbeziehung als A- oder B-Kunde zu erreichen.
 	] (hexagon) {};
 
 \begin{itemize}
-	\item Ereignisse beschreiben einen \texbf{Zustand (das, was passiert 
+	\item Ereignisse beschreiben einen \textbf{Zustand (das, was passiert 
 		ist)}
 	\item Die Bezeichnung eines Ereignisses setzt sich aus einem 
 		\emph{Informationsobjekt} \textbf{z.B. Beleg, Gegenstand} und 
@@ -3235,6 +3235,38 @@ Geschäftsbeziehung als A- oder B-Kunde zu erreichen.
 \end{itemize}
 
 \subsubsection{Funktionen}
+
+\begin{tikzpicture}
+	\draw[rounded corners] (0, 0) rectangle (4, 1) {};
+\end{tikzpicture}
+
+\begin{itemize}
+	\item Funktionen verändern Zustand und Inhalt von informationsobjekten, 
+		d.h. der Mitarbeiter tut etwas. Funktionen sind aktiv, es sind 
+		\emph{die Tätigkeiten des Mitarbeiters.} 
+	\item Die Bezeichnung einer Funktion setzt sich aus dem 
+		\emph{Informationsobjekt} und einer \emph{Beschreibung der 
+		Tätigkeit} zusammen, z.B.:
+	\begin{itemize}
+		\item \emph{Auftag freigeben}
+		\item \emph{Rechnung schreiben}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Organisationseinheit}
+
+\begin{tikzpicture}
+	\draw (0,0) circle (20pt);
+\end{tikzpicture}
+
+\begin{itemize}
+	\item Die Organisationseinheit (Abteilung, Stelle) gibt an, von wem die 
+		Funktion, also die bestimmte Tätigkeit, ausgeführt wird. Um den 
+		Zusammenhang zwischen der Organisationseinheit und der Tätigkeit 
+		noch deutlicher zu machen, kann man diese mit der entsprechenden 
+		Funktion verbinden (Zuordnung = Einfache Linie). Wenn die 
+		Zuordnung eindeutig ist, kann die Linie auch weggelassen werden.
+\end{itemize}
 
 \section{Serviceanfragen bearbeiten}
 \dots
