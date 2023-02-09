@@ -3204,8 +3204,37 @@ Geschäftsbeziehung als A- oder B-Kunde zu erreichen.
 
 \subsubsection{Ereignisse}
 
+\tikz\path
+	node[
+		regular polygon,
+		regular polygon sides=6,
+		draw,
+		inner sep=1.7cm,
+	] (hexagon) {};
+
 \begin{itemize}
+	\item Ereignisse beschreiben einen \texbf{Zustand (das, was passiert 
+		ist)}
+	\item Die Bezeichnung eines Ereignisses setzt sich aus einem 
+		\emph{Informationsobjekt} \textbf{z.B. Beleg, Gegenstand} und 
+		dem \emph{eintretenden Zustand} zusammen
+	\begin{itemize}
+		\item \emph{Auftrag ist eingegangen}
+		\item \emph{Rechnung ist versandt}
+	\end{itemize}
+	\item für den Eingang des Auftrags hat der Mitarbeiter nichts tun 
+		müssen. Ereignisse sind \emph{Passiv}, d.h. es sind keine
+		Tätigkeiten
+	\item \emph{Rechnungen versenden} ist damit \textbf{kein} Ereignis, 
+		sondern eine Tätigkeit. Hier hat der Mitarbeiter etwas getan.
+	\item EPKs beginnen und enden \emph{immer} mit einem Ereignis. 
+		Ereignisse, die einen Prozess auslösen, werden als 
+		\emph{Startereignis} bezeichnet. Ereignisse, die den Abschluss 
+		eines Prozesses beschreiben sind \emph{Endereignisse}. 
+	\item Ereignisse und Funktionen müssen sich immer abwechseln. 
 \end{itemize}
+
+\subsubsection{Funktionen}
 
 \section{Serviceanfragen bearbeiten}
 \dots
