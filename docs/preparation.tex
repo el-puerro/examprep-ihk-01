@@ -7,7 +7,8 @@
 \usepackage[a4paper, left=2.5cm, right=2cm, top=2cm, bottom=2cm]{geometry}
 \usepackage{amsmath}
 \usepackage{tikz}
-\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,positioning,shapes.symbols,chains,shapes.geometric,shapes.arrows,calc}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,positioning,
+shapes.symbols,chains,shapes.geometric,shapes.arrows,calc}
 
 \title{Prüfungsvorbereitung für die IHK-Abschlussprüfung Teil I}
 \author{L.M.}
@@ -3291,7 +3292,55 @@ Geschäftsbeziehung als A- oder B-Kunde zu erreichen.
 		\item \textbf{Von Informationsobjekt zu Funktion}
 		\item \textbf{Bidirektional}
 		\item \textbf{Von Funktion zum Informationsobjekt}
-	\end{itemize}
+	\end{i	temize}
+\end{itemize}
+
+\subsubsection{Verknüpfungsoperatoren/Konnektoren}
+
+\begin{equation}
+	\lor \land \oplus
+\end{equation}
+
+\begin{itemize}
+	\item Immer wenn nach einem Ereignis mehrere Funktionen folgen oder wenn 
+		nach einer FUnktion mehrere Ereignisse folgen, muss ein 
+		Konnektor gesetzt werden. 
+	\item Nach einem Ereignis darf weder ein ODER noch ein XOR folgen. Wenn
+		der Kontrollfluss nach einem Ereignis getrennt wird, dann 
+		\emph{nur} durch ein UND
+\end{itemize}
+
+\subsubsection{zusammenführung des Kontrollflusses}
+
+\begin{itemize}
+	\item Immer wenn mehrere FUnktionen zu einem Ereignis führen oder wenn 
+		mehrere Ereignisse zu einer Funktion führen, muss ein Konnektor 
+		gesetzt werden. Der zusammenführende Konnektor muss immer der 
+		gleiche wie der Konnektor sein, der den Kontrollfluss getrennt 
+		hat.
+\end{itemize}
+
+\subsubsection{der UND-Konnektor}
+
+\begin{itemize}
+	\item Wird der Kontrollfluss durch einen Und-Konnektor getrennt, so 
+		müssen \emph{alle} entstehenden Zweige durchlaufen werden. 
+\end{itemize}
+
+\subsubsection{Der XOR-Konnektor}
+
+\begin{itemize}
+	\item Wird der Kontrollfluss durch einen XOR-Konnektor getrennt, so wird
+		\emph{entweder} der eine \emph{oder} der andere Zweig 
+		durchlaufen. 
+\end{itemize}
+
+\subsubsection{Der ODER-Konnektor}
+
+\begin{itemize}
+	\item Wird der Kontrollfluss durch einen ODER-Konnektor getrennt, so 
+		können der \emph{eine Zweig oder der andere Zweig oder alle 
+		Zweige} durchlaufen werden. 
 \end{itemize}
 
 \section{Serviceanfragen bearbeiten}
