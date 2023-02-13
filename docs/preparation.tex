@@ -6,6 +6,7 @@
 \usepackage[ngerman]{babel}
 \usepackage[a4paper, left=2.5cm, right=2cm, top=2cm, bottom=2cm]{geometry}
 \usepackage{amsmath}
+\usepackage{multicol}
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,positioning,
 shapes.symbols,chains,shapes.geometric,shapes.arrows,calc}
@@ -20,6 +21,7 @@ shapes.symbols,chains,shapes.geometric,shapes.arrows,calc}
 
 \newpage
 \chapter{Entwicklung vernetzter Prozesse}
+\begin{multicols}{2}
 \section{Elektrotechnik}
 \subsection{Grundgrößen der Elektrotechnik}
 
@@ -149,7 +151,6 @@ Für den elektronischen Zähler gilt:
     \end{equation}
 \end{center}
 
-\newpage
 Außerdem gilt folgendes über die elektrische Arbeit (Watt):
 \begin{center}
     \begin{equation}
@@ -359,7 +360,6 @@ Schaltformeln. Ein KV-Diagramm für vier Eingänge könnte wie folgt aussehen:
 \end{center}
 
 
-\newpage
 \subsection{Schaltalgebra}
 
 \subsubsection{Negation}
@@ -479,7 +479,6 @@ zu realisieren, allerdings gibt es einige Nachteile:
 	Lichtwellenleitern
 \end{itemize}
 
-\newpage
 \subsubsection{Sekundärbereich}
 
 Im \emph{Sekundärbereich} gibt es keine allgemeingültig bessere Entscheidung
@@ -531,7 +530,6 @@ verschiedene Laufzeiten ergeben. Das wird auch \emph{Modendispersion}
 genannt. Ab ca. 9$\mu$m ist nur noch die Ausbreitung einer einzelnen Mode
 möglich.
 
-\newpage
 \subsubsection{Verschiedene Arten von Lichtwellenleitern}
 
 Ein Lichtwellenleiter, der nur eine Mode durch das Kabel lassen kann, wird
@@ -628,7 +626,6 @@ Es bestehen folgende \emph{(mögliche)} Auswahlkriterien für Switches:
 % Kann mir nicht vorstellen, dass das in der IHK-Prüfung relevant wird
 % \subsubsection{Switchingverfahren}
 
-\newpage
 \subsection{Netztopologien}
 
 In der \textbf{Sterntopologie} gehen von einem Sternmittelpunkt aus sternförmig
@@ -681,7 +678,6 @@ die Installation über mehrere Switches hinweg zu realisieren. Jedes virtuelle
 Netz benötigt allerdings eine eigene Verbindung, daher müssen die Switches mit
 zwei Kabeln verbunden werden.
 
-\newpage
 \subsubsection{Tagged VLAN}
 \emph{Tagged VLANs} arbeiten im Gegensatz tu portbasierten VLANs framebasiert.
 Eine \emph{Markierung} im Frame der Nachricht, auch \emph{Tag} genannt, sorgt
@@ -1119,11 +1115,12 @@ den oberen 64-bit, indem der Provider eine Präfixlänge kleiner 64 anbietet. Wi
 Provider-seitig z.b. ein /60 bereitgestellt verbleiben 4 bits zum Subnetting,
 was $2^{4} = 16$ Subnetze erlaubt.
 
-
+\end{multicols}
 
 % ITD/Wirtschafts- und Betriebslehre
 \chapter{Gestaltung von IT-Dienstleistungen/Wirtschafts- und Betriebslehre}
 
+\begin{multicols}{2}
 \section{Das Duale Ausbildungssystem}
 
 \subsection{Wie entsteht ein Ausbildungsberuf?}
@@ -1293,7 +1290,6 @@ statt. \\
 
 Die Wahl wird \emph{geheim und unmittelbar} durchgeführt.
 
-\newpage
 \subsection{Betriebsrat}
 
 \subsubsection{Allgemeines}
@@ -1512,7 +1508,6 @@ Streikstatistik rangieren die deutschen ArbeitnehmerInnen im unteren Drittel.
 	\end{enumerate}
 \end{itemize}
 
-\newpage
 \subsection{\S 102 BetrVG: Mitbestimmung bei Kündigungen}
 
 \begin{itemize}
@@ -1622,7 +1617,6 @@ gesetzlichen Feiertag}, dann haben Jugendliche grundsätzlich \emph{frei};
 hiervon gibt es eine Reihe an Ausnahmen(z.B. bei Arbeiten in Krankenhäusern, in
 der Landwirtschaft, etc.).
 
-\newpage
 \subsubsection{Welche Regelungen gelten für Freizeit und Ruhepausen?
 (\S\S 11, 13JArbSchG)}
 
@@ -1783,7 +1777,6 @@ Arbeitslosengeld II wird während der gesetzlichen Mutterschaftsfristen unter
 Berücksichtigung eines Mehrbedarfs ab der 13. Schwangerschaftswoche
 weitergezahlt.
 
-\newpage
 \subsection{Weitere Leistungen}
 
 \subsubsection{\S 15 MuSchG und \S 24 c SBG V}
@@ -1834,7 +1827,6 @@ Die Versicherte erhält Haushaltshilfe, soweit ihr wegen Schwangerschaft oder
 Entbindung die Weiterführung des Haushalts nicht möglich und eine andere im
 Haushalt lebende Person den Haushalt nicht weiterführen kann.
 
-\newpage
 \section{Sozialversicherung}
 
 \subsection{Allgemein}
@@ -1926,7 +1918,6 @@ ist wird der Eigenanteil an den \emph{vermögenswirksamen Leistungen} abgezogen.
     \item Beitragsbemessungsgrenze: \emph{58.050 Euro}
 \end{itemize}
 
-\newpage
 \subsection{Unfallversicherung}
 
 \begin{itemize}
@@ -1982,7 +1973,6 @@ ist wird der Eigenanteil an den \emph{vermögenswirksamen Leistungen} abgezogen.
 	\end{itemize}
 \end{itemize}
 
-\newpage
 \subsection{Arbeitslosenversicherung}
 
 \begin{itemize}
@@ -2023,7 +2013,6 @@ ist wird der Eigenanteil an den \emph{vermögenswirksamen Leistungen} abgezogen.
 	\end{itemize}
 \end{itemize}
 
-\newpage
 \subsection{Rentenversicherung}
 
 \begin{itemize}
@@ -2252,7 +2241,6 @@ folgenden Kapiteln werden Spezifikationen angegeben.
     \hline
 \end{tabular}
 
-\newpage
 Stick-PCs können mit portablem Betriebssystem und portablen Apps flexibel
 überall für kurze Zeit einen eigenen Rechner mit Anwendungen bieten. Mini-PCs
 können i.d.R. auch an Daten- und Kommunikationsnetze angeschlossen und damit
@@ -2357,7 +2345,6 @@ Verwertung und Entsorgung der IT werden als zusammenhängender Kreislauf
 verstanden. Um dies zu überprüfen können in Unternehmen Nachhaltigkeitskonzepte
 oder Nachhaltigkeitsberichte erstellt werden. \\
 
-\newpage
 Mögliche Maßnahmen:
 
 \begin{itemize}
@@ -2622,7 +2609,6 @@ Unternehmen die Prozesse optimal bearbeiten, steuern oder managen können. Ein
 ERP-System führt daher insbesondere fünf große Managementbereiche des
 Unternehmens zusammen und ermöglicht ihre Zusammenarbeit.
 
-\newpage
 \begin{itemize}
     \item \textbf{Human Resource Management}: Das HRM ist besser bekannt unter
 	den Begriffen \emph{Personalmanagement} oder \emph{Personalwesen} und
@@ -2665,7 +2651,6 @@ Unternehmens zusammen und ermöglicht ihre Zusammenarbeit.
 	und Entwicklung in das ERP-System integriert oder damit verbunden.
 \end{itemize}
 
-\newpage
 \section{Komponenten eines Arbeitsplatzcomputers unterscheiden}
 
 Alle möglichen Komponenten und unterschiedlichen Varianten hier zu beschreiben,
@@ -2714,7 +2699,6 @@ weiterer Vorteil von virtuellen Maschinen ist, dass die Betriebsysteme in einem
 gesicherten Raum laufen und beim Absturz die Anwendungen der anderen
 Betriebsysteme nicht abstürzen lassen.
 
-\newpage
 \section{Kundenanforderungen im Leistungsprozess berücksichtigen und
 Projektmanagement vorbereiten}
 
@@ -3374,7 +3358,10 @@ Reaktionszeiten getroffen.
 	\item Neuauftrag und Basispreisliste, etc. 
 \end{itemize}
 
-\subsection{Sachlich bedingt}
+\subsection{Einflussfaktoren für die qualifizierte Aussage: Reaktionszeit 
+festlegen}
+
+\subsubsection{Sachlich bedingt}
 
 \begin{itemize}
 	\item \emph{Arten}: Wunsch auf Hardwareaustausch, Servicewechsel, 
@@ -3387,15 +3374,43 @@ Reaktionszeiten getroffen.
 	\item Lizenzrecht etc. 
 \end{itemize}
 
+\subsubsection{Organisatorisch bedingt, Einflussfaktoren}
+
+\begin{itemize}
+	\item Verfügbarkeit der Ressourcen
+	\item Wartungszyklus
+	\item Kalender: Werk- oder Überstunden
+	\item Ansprechpartner verfügbar
+	\item fallbedingt
+	\item Monitoring möglich
+	\item Fernzugriff, -wartung
+	\item Kommunikationsplattform
+\end{itemize}
+
+\subsubsection{sonstig bedingt}
+
+\begin{itemize}
+	\item fallbedingt
+	\item Versicherungsfall
+	\item Betriebsbedingt
+	\item gesetzlich, strafrechtlich
+	\item Sicherheitsrelevant
+	\item persönlich
+	\item etc. 
+\end{itemize}
+
+
 \section{Mit Kunden Angemessen kommunizieren}
 \dots
 
 \section{Serviceanfragen einordnen und schnelle Hilfe anbieten (Problem Management)}
 \dots
 
+\end{multicols}
 
 % SWD
 \chapter{Softwaretechnologie und Datenmanagement}
+\begin{multicols}{2}
 
 \section{Grundlagen zur Informationssicherheit erarbeiten}
 \dots
@@ -3414,7 +3429,7 @@ Reaktionszeiten getroffen.
 
 \section{Objektorientierte Programmierung}
 \dots
-
+\end{multicols}
 \end{document}
 
 
