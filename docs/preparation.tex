@@ -3558,6 +3558,93 @@ herunterreißen. Es besteht die Gefahr, dass das Gerät kaputt geht. \\
 
 \textbf{Lösung:} Strukturierte Verkabelung im Gebäude.
 
+\subsubsection{TOMs nach \S64 BDSG}
+
+\begin{enumerate}
+	\item Zugangskontrolle
+		\begin{itemize}
+			\item Geschlossene Fenster und Türen, ggf Kontrolle
+			\item Verschiedene Access-Levels für die Mitarbeiter
+				ermöglichen
+		\end{itemize}
+	\item Datenträgerkontrolle
+		\begin{itemize}
+			\item Bitlocker/Knox für alle Endgeräte
+			\item Auusrangierte Datenträger werden fachgerecht 
+				plattgemacht und entsorgt
+		\end{itemize}
+	\item Speicherkontrolle
+		\begin{itemize}
+			\item Passwortgeschützte Endgeräte
+			\item Anständige Benutzer- und Rechteverwaltung
+		\end{itemize}
+	\item Benutzerkontrolle
+		\begin{itemize}
+			\item Wie bei Punkt 3, aber keiner hat Sammelaccounts
+				im Active-Directory
+		\end{itemize}
+	\item Zugriffskontrolle
+		\begin{itemize}
+			\item Wie bei den Punkten 3 und 4
+		\end{itemize}
+	\item Übertragungskontrolle
+		\begin{itemize}
+			\item Vermeiden unverschlüsselter/mangelhaft 
+				verschlüsselter Übertragungsprotokolle
+			\item Verwendung verschlüsselter 
+				Datenübertragungsprotokolle
+		\end{itemize}
+	\item Eingangskontrolle
+		\begin{itemize}
+			\item Regelmäßiges Controlling
+			\item Benutzer- und Rechteverwaltung
+		\end{itemize}
+	\item Transportkontrolle
+		\begin{itemize}
+			\item Keine Datenträger mit personenbezogenen Daten von 
+				A nach B bringen (nicht mehr zeitgemäß)
+			\item Daten verschlüsseln
+		\end{itemize}
+	\item Wiederherstellbarkeit
+		\begin{itemize}
+			\item \textbf{BACKUPS!!!}
+			\item Spare parts fürs Wechseln defekter Geräte (-teile)
+				sowie USVs etc.
+		\end{itemize}
+	\item Zuverlässigkeit
+		\begin{itemize}
+			\item Versionskontrolle (z.B. Git)
+			\item Ausgiebige Tests mit dedizierten Testphasen
+			\item USVs, RAID, etc. 
+		\end{itemize}
+	\item Datenintegrität
+		\begin{itemize}
+			\item Backups 
+			\item RAID
+			\item Spiegelung von Servern
+		\end{itemize}
+	\item Auftragskontrolle
+		\begin{itemize}
+			\item Trading Partner Management
+			\item Automatisierte Statusrückmeldungen
+			\item Regelmäßiiges Controlling
+		\end{itemize}
+	\item Verfügbarkeitskontrolle
+		\begin{itemize}
+			\item Backups
+			\item RAID
+			\item Spiegelung von Servern
+			\item Spare Parts fürs Wechseln defekter Geräte (-teile)
+				sowie USVs etc.
+		\end{itemize}
+	\item Trennbarkeit
+		\begin{itemize}
+			\item Für jegliche Bearbeitung sollte eine individuelle
+				Abteilung zuständig sein
+			\item Thematische Trennungen zwischen Abteilungen
+		\end{itemize}
+\end{enumerate}
+
 \section{Schutzbedarfsfeststellungen anhand eines Beispielunternehmens des BSI 
 vorbereiten} % KMS
 \dots
