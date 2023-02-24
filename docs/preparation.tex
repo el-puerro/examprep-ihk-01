@@ -401,15 +401,15 @@ Es gelten folgende Vorrangsregelungen:
 \end{itemize}
 
 \subsubsection{Auflösen von Klammern}
-\begin{center}
-    \begin{equation}
-	Q = (A \land B) \lor (C \land D) = A \land B \lor C \land D
-    \end{equation}
-    \begin{equation}
-	Q = (A \lor B) \land (C \lor D) = A \land C \lor A \land D \lor B \land
-	C \lor B \land D
-    \end{equation}
-\end{center}
+\begin{equation}
+    Q = (A \land B) \lor (C \land D) = A \land B \lor C \land D
+\end{equation}
+\begin{equation}
+	\begin{split}
+	    Q & = (A \lor B) \land (C \lor D) \\
+	& = A \land C \lor A \land D \lor B \land C \lor B \land D
+	\end{split}
+\end{equation}
 
 \subsubsection{Gesetze nach De Morgan}
 
@@ -776,12 +776,12 @@ TiB sieht beispielsweise so aus:
 \begin{center}
     \begin{equation}
 	\begin{split}
-	    2TB \cdot \frac{1000 \frac{GB}{TB}}{1024 \frac{GiB}{TiB}}
-	    \cdot \frac{1000 \frac{MB}{GB}}{1024 \frac{MiB}{GiB}}
-	    \cdot \frac{1000 \frac{kB}{MB}}{1024 \frac{kiB}{MiB}}
-	    \cdot \frac{1000 \frac{Byte}{kB}}{1024 \frac{Byte}{kiB}}
-	    = 2TB \cdot \left( \frac{1000}{1024}^4 \right) \frac{TiB}{TB}
-	    \approx 1,82 TiB
+		& 2TB \cdot \frac{1000 \frac{GB}{TB}}{1024 \frac{GiB}{TiB}} \\
+		& \cdot \frac{1000 \frac{MB}{GB}}{1024 \frac{MiB}{GiB}} \\
+		& \cdot \frac{1000 \frac{kB}{MB}}{1024 \frac{kiB}{MiB}} \\
+		& \cdot \frac{1000 \frac{Byte}{kB}}{1024 \frac{Byte}{kiB}} \\
+		& = 2TB \cdot \left( \frac{1000}{1024}^4 \right) \frac{TiB}{TB} \\
+		& \approx 1,82 TiB
 	\end{split}
     \end{equation}
 \end{center}
@@ -919,7 +919,7 @@ Subnetzmaske ergibt sich nur aus der Bitabfolge im ersten Oktett:
 \begin{center}
     \begin{tabular}{ | c | c | c | c | }
 	\hline
-	Anzahl der 1 im 1. Oktett & Erste IP & letzte IP & Netzklasse \\ \hline
+	Anzahl 1 & Erste IP & letzte IP & Netzklasse \\ \hline
 	0 & $0.0.0.0$ & $127.255.255.255$ & Class A \\ \hline
 	1 & $128.0.0.0$ & $191.255.255.255$ & Class B \\ \hline
 	2 & $192.0.0.0$ & $223.255.255.255$ & Class C \\ \hline
@@ -2234,14 +2234,14 @@ Bedarf an. Folgende Bauformen werden je nach Einsatzbereich gesucht und müssen
 daher von Fachberatern zielgenau gewählt und konfiguriert werden. In den
 folgenden Kapiteln werden Spezifikationen angegeben.
 
-\begin{tabular}{ | l | p{6cm} | p{6cm} | }
+\begin{tabular}{ | l | p{2cm} | p{2cm} | }
     \hline
     Komponente & Desktop-PC,Laptops & Workstation \\ \hline
-    CPU & normal bis schnell & viele kerne, hoch getaktet \\ \hline
+    CPU & normal bis schnell & viele Kerne, hoch getaktet \\ \hline
     RAM & 4-8GB & Groß mit mehr als 8GB \\ \hline
     Grafikkarte & integriert & dedicated \\ \hline
-    Einsatz & Office und Geschäftsprogramme, \newline Standardlizenzkosten &
-    Multimedia/Design, Bildbearbeitung, \newline hohe Lizenzkosten CAD,
+    Einsatz & Office und Geschäftsprogramme, \newline Standard-lizenzkosten &
+    Multimedia/ Design, Bildbearbeitung, \newline hohe Lizenzkosten CAD,
     Videobearbeitung \\
     \hline
 \end{tabular}
