@@ -3914,6 +3914,24 @@ Beispiel: \\
 
 $0x5D6A = A \cdot 16^{0} + 6 \cdot 16^{1} + D \cdot 16^{2} + 5 \cdot 16^{3}$
 
+\subsubsection{Umrechnen von Dezimal- ins Hexadezimalsystem}
+
+Auch huer geht man vor wie beim Binärsystem. Man teilt jedoch nicht durch 2, 
+sondern durch 16: \\
+
+Hat man eine Dezimalzahl gegeben, geht man nach folgendem Verfahren vor: 
+
+\begin{enumerate}
+	\item Teile die Zahl mit Rest durch 16 und notiere den Rest
+	\item Teile das Ergebnis wqieder durch 16 und notiere den Rest
+	\item Fahre fort, bis dein Ergebnis 0 ist
+	\item Die gesuchte Binärzahl sind die Ziffern der Reste, wobai man mit
+		dem Rest beginnt
+\end{enumerate}
+
+\emph{Achtung: Denke daran, die Reste von 10 bis 15 in die Symbole A bis F 
+umzuwandeln}
+
 \section{Programmablaufpläne, Struktogramme und Pseudocode}
 \dots
 
